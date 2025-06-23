@@ -27,10 +27,10 @@ def parse_output(output):
 def get_hash(x): return hashlib.sha1(x.encode()).hexdigest()
 alphabet_list = list(ascii_uppercase+ascii_lowercase)
 def run_mode(jobName, mySequence):
-  jobname = "test" #@param {type:"string"}
+  jobname = jobName #@param {type:"string"}
   jobname = re.sub(r'\W+', '', jobname)[:50]
 
-  sequence = "GWSTELEKHREELKEFLKKEGITNVEIRIDNGRLEVRVEGGTERLKRFLEELRQKLEKKGYTVDIKIE" #@param {type:"string"}
+  sequence = mySequence #@param {type:"string"}
   sequence = re.sub("[^A-Z:]", "", sequence.replace("/",":").upper())
   sequence = re.sub(":+",":",sequence)
   sequence = re.sub("^[:]+","",sequence)
